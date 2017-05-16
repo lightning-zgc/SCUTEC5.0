@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<!-- 四川大学腾讯俱乐部-技术部 -->
+<head>
+    <meta charset="utf-8">
+    <title>Canvas</title>
+</head>
+
+<body>
+    <canvas id="canvas" style="position:absolute;"></canvas>
+</body>
+<script type="text/javascript">
+    window.onload = function() {
+        var canvas = document.getElementById('canvas'),
+            context = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        (function drawFrame() {
+            window.requestAnimationFrame(drawFrame, canvas);
+            context.clearRect(0, 0, canvas.width, canvas.height);
+        }());
+    }
+</script>
+
+</html>
